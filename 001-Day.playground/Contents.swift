@@ -39,6 +39,7 @@ let album: String = "Reputation"
 let year: Int = 1989
 let height: Double = 1.78
 let taylorRockd: Bool = true
+let red, green, blue: Double
 
 
 
