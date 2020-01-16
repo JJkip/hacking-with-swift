@@ -86,4 +86,20 @@ enum Activity2 {
     case talking(topic: String)
     case singing(volume: Int)
 }
-let talking = Activity.talking(topic: "football")
+let talking = Activity2.talking(topic: "football")
+
+//Enum raw values
+enum Planet: Int {
+    case mercury
+    case venus
+    case eatth
+    case mars
+}
+let earth = Planet(rawValue: 2)
+
+enum Planet2: Int {
+    case mercury = 1
+    case venus
+    case earth
+    case mars
+}
