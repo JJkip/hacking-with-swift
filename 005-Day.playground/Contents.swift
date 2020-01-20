@@ -41,3 +41,13 @@ func greet(_ person: String){
 }
 greet("James")
 
+//Default parameters
+func greetings(_ person: String, nicely: Bool = true){
+    if nicely == true {
+        print("Hello, \(person)!")
+    } else {
+        print("Oh no, it's \(person) again...")
+    }
+}
+greetings("Taylor")
+greetings("Taylor", nicely: false)
