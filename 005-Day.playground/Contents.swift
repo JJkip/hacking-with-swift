@@ -59,3 +59,17 @@ func squareManyNumbers(numbers: Int...){
     }
 }
 squareManyNumbers(numbers: 1,2,3,4,5)
+
+//Writing throwing functions
+enum PasswordError: Error {
+    case obvious
+}
+
+func checkPassword(_ password: String) throws -> Bool{
+    if password == "password" {
+        throw PasswordError.obvious
+    }
+    return true
+}
+
+
