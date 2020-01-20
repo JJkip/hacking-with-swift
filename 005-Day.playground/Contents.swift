@@ -78,3 +78,13 @@ do {
 } catch {
     print("You can't use that password")
 }
+
+//inout parameters
+func doubleInPlace(number: inout Int){
+    number *= 2
+    print("The new number is: \(number)")
+}
+var myNum = 10
+var myNum2 = 5
+doubleInPlace(number: &myNum)
+doubleInPlace(number: &myNum2)
