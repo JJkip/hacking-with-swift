@@ -17,3 +17,13 @@ func square(number: Int){
     print(number * number)
 }
 square(number: 8)
+
+//Returning values
+func square2(number: Int) -> Int {
+    return number * number
+}
+let result = square2(number: 8)
+
+print(result)
+
+/*If you need to return multiple values, this is a perfect example of when to use tuples.*/
