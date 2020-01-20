@@ -34,3 +34,10 @@ func sayHello(to name: String){
     print("Hello, \(name)")
 }
 sayHello(to: "Taylor")
+
+//Omitting parameter labels
+func greet(_ person: String){
+    print("Hello, \(person)")
+}
+greet("James")
+
