@@ -41,3 +41,24 @@ firstScore1 < secondScore2
 firstScore1 >= secondScore2
 
 "Taylor" <= "Swift"
+
+//Conditions
+let firstCard = 11
+let secondCard = 10
+if firstCard + secondCard == 21 {
+    print("Blackjail!")
+}
+
+if firstCard + secondCard == 21 {
+    print("Blackjack!")
+} else {
+    print("Regular cards")
+}
+
+if firstCard + secondCard == 2 {
+    print("Aces - lucky")
+} else if firstCard + secondCard == 21 {
+    print("Blackjack!")
+    } else {
+    print("Regular cards")
+}
