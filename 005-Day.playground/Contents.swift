@@ -51,3 +51,11 @@ func greetings(_ person: String, nicely: Bool = true){
 }
 greetings("Taylor")
 greetings("Taylor", nicely: false)
+
+//Variadic functions
+func squareManyNumbers(numbers: Int...){
+    for number in numbers {
+        print("\(number) squared is \(number * number)")
+    }
+}
+squareManyNumbers(numbers: 1,2,3,4,5)
