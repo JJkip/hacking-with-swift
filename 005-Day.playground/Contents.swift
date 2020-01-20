@@ -52,7 +52,12 @@ func greetings(_ person: String, nicely: Bool = true){
 greetings("Taylor")
 greetings("Taylor", nicely: false)
 
+func greetings2(_ person: String = "James"){
+    print("Hello, \(person)")
+}
+
 //Variadic functions
+/**Variadic functions accept zero or more of a specific parameter, and Swift converts the input to an array.*/
 func squareManyNumbers(numbers: Int...){
     for number in numbers {
         print("\(number) squared is \(number * number)")
