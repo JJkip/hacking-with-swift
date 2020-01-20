@@ -26,4 +26,11 @@ let result = square2(number: 8)
 
 print(result)
 
+//:TODO
 /*If you need to return multiple values, this is a perfect example of when to use tuples.*/
+
+//Parameter labels
+func sayHello(to name: String){
+    print("Hello, \(name)")
+}
+sayHello(to: "Taylor")
