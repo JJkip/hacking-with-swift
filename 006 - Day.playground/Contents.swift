@@ -52,3 +52,14 @@ func traveller(action: (String) -> Void){
 traveller { (place: String) in
     print("I'm going \(place) in my car")
 }
+
+//Using closures as parameters when they return values
+func travels(action2: (String) -> String) {
+    print("I'm getting ready to go")
+    let description = action2("Kisumu")
+    print(description)
+    print("I arrived")
+}
+travels{ (place: String) -> String in
+    return "I'm going to \(place) in my car"
+}
