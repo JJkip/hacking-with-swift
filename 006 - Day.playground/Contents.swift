@@ -36,10 +36,19 @@ func travelling(action: () -> Void){
     action()
     print("I arrived!")
 }
-
 travelling() {
     print("I'm driving in my car")
 }
 travelling {
     print("I'm driving in my car")
+}
+
+//Using closures as parameters when they accept parameters
+func traveller(action: (String) -> Void){
+    print("I'm getting ready to go.")
+    action("Nairobi")
+    print("I arrived!")
+}
+traveller { (place: String) in
+    print("I'm going \(place) in my car")
 }
