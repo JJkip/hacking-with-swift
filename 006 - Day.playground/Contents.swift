@@ -63,3 +63,17 @@ func travels(action2: (String) -> String) {
 travels{ (place: String) -> String in
     return "I'm going to \(place) in my car"
 }
+
+//Shorthand parameter names
+func travel(action: (String) -> String){
+    print("I'm getting ready to go.")
+    let description = action("Kericho")
+    print(description)
+    print("I arrivrd!")
+}
+travel {
+    "I'm going to \($0) in my car"
+}
+
+
+
