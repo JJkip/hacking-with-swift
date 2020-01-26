@@ -86,4 +86,12 @@ travel{
     "I'm going to \($0) at \($1) miles per hour"
 }
 
-
+//Returning closures from functions
+func travel() -> (String) -> Void {
+    return {
+        print("I'm going to \($0)")
+    }
+}
+let result = travel()
+result("Kakamega")
+let result2 = travel()("Busia")
