@@ -95,3 +95,15 @@ func travel() -> (String) -> Void {
 let result = travel()
 result("Kakamega")
 let result2 = travel()("Busia")
+
+//Capturing values
+func travel() -> (String) -> Void {
+    var counter = 1
+    return {
+        print("\(counter). I'm going to \($0)")
+        counter += 1
+    }
+}
+result("Bomet")
+result("Bomet")
+result("Bomet")
