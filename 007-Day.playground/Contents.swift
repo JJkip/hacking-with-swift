@@ -60,3 +60,10 @@ struct Person {
 }
 var person = Person(name: "JayJay")
 person.makeAnonymus()
+
+//Properties and methods of strings
+let string = "Do or do not, there is no try."
+print(string.count)
+print(string.hasPrefix("Do"))
+print(string.uppercased())
+print(string.sorted())
