@@ -75,3 +75,15 @@ toys.append("Buzz")
 toys.firstIndex(of: "Buzz")
 print(toys.sorted())
 toys.remove(at: 0)
+
+//Initializers
+struct User{
+    var username: String
+    init() {
+        username = "Anonymous"
+        print("Creating a new user!")
+    }
+}
+/*var user = User(username: "twostraws")*/
+var user = User()
+user.username = "twostraws"
