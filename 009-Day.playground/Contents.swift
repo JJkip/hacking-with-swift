@@ -21,3 +21,21 @@ struct Person {
         self.name = name
     }
 }
+
+//Lazy properties
+struct FamilyTree{
+    init() {
+       print("Creating family tree")
+    }
+}
+
+struct Person2 {
+    var name: String
+    lazy var familyTree = FamilyTree()
+    
+    init(name: String){
+        self.name = name
+    }
+}
+var ed = Person2(name: "Ed")
+ed.familyTree
