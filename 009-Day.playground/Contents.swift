@@ -39,3 +39,16 @@ struct Person2 {
 }
 var ed = Person2(name: "Ed")
 ed.familyTree
+
+//Static properties and methods
+struct Student{
+    static var classSize = 0
+    var name: String
+    init(name: String){
+        self.name = name
+        Student.classSize += 1
+    }
+}
+let edu = Student(name: "Edwin")
+let yv = Student(name: "Yvonne")
+print(Student.classSize)
