@@ -52,3 +52,17 @@ struct Student{
 let edu = Student(name: "Edwin")
 let yv = Student(name: "Yvonne")
 print(Student.classSize)
+
+//Access control
+struct Person3 {
+    private var id: String
+    
+    init(id: String){
+        self.id = id
+    }
+    
+    func identify() -> String {
+        return "My social security number is \(id)"
+    }
+}
+let jj = Person3(id: "123456")
