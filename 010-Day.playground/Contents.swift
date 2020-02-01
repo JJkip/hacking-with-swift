@@ -44,3 +44,17 @@ final class Cat{
         self.breed = breed
     }
 }
+
+//Copying objects
+class Singer{
+    var name = "Taylor Swift"
+}
+
+var singer = Singer()
+print (singer.name)
+
+var singerCopy = singer
+singerCopy.name = "Justine Bieber"
+
+print(singer.name)
+/*Now try changing class to stuct*/
