@@ -58,3 +58,23 @@ singerCopy.name = "Justine Bieber"
 
 print(singer.name)
 /*Now try changing class to stuct*/
+
+
+
+//Deinitializers
+class Person{
+    var name = "John Doe"
+    
+    deinit{
+        print("\(name) is alive")
+    }
+    
+    func printGreeting() {
+         print("Hellow, I'm \(name)")
+    }
+}
+
+for _ in 1...3{
+    let person = Person()
+    person.printGreeting()
+}
