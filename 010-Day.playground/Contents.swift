@@ -78,3 +78,27 @@ for _ in 1...3{
     let person = Person()
     person.printGreeting()
 }
+
+
+//Mutability
+class Cook {
+    var name = "Mary Tai"
+}
+let yammy = Singer()
+yammy.name = "Edsheeran Swift"
+print(yammy.name)
+/*Use let in the class to avoid mutability (let name .....)*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
