@@ -33,3 +33,14 @@ class Poodle: Dog{
 
 let poppy = Poodle()
 poppy.makeNoise()
+
+//Final Classes
+final class Cat{
+    var name: String
+    var breed: String
+    
+    init(name: String, breed: String){
+        self.name = name
+        self.breed = breed
+    }
+}
