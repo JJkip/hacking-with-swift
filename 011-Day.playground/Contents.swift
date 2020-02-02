@@ -12,3 +12,17 @@ struct User: Identifiable {
 func displayID(thing: Identifiable){
     print("My ID is \(thing.id)")
 }
+
+//Protocol inheritance
+protocol Payable{
+    func calculateWages() -> Int
+}
+protocol NeedsTrainging {
+    func study()
+}
+protocol  HasVacation {
+    func takeVacation(days: Int)
+}
+protocol Employee: Payable, NeedsTrainging, HasVacation {
+    
+}
