@@ -57,3 +57,19 @@ extension Collection{
 }
 pythons.summarize()
 beatles.summarize()
+
+//Protocol-oriented programming
+protocol IndentifiableX {
+    var idX: String { get set }
+    func identifyX()
+}
+extension IndentifiableX {
+    func identifyX() {
+        print("My ID \(idX).")
+    }
+}
+struct UserX: IndentifiableX {
+    var idX: String
+}
+let twostraws = UserX(idX: "twostraws")
+twostraws.identifyX()
