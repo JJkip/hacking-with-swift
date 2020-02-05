@@ -35,3 +35,15 @@ As a result, you should force unwrap only when you’re sure it’s safe – the
 /**/
 let age2: Int! = nil
 /*Because they behave as if they were already unwrapped, you don’t need if let or guard let to use implicitly unwrapped optionals. However, if you try to use them and they have no value – if they are nil – your code crashes.*/
+
+//Nil coalescing
+/*The nil coalescing operator unwraps an optional and returns the value inside if there is one. If there isn’t a value – if the optional was nil – then a default value is used instead. Either way, the result won’t be optional: it will either by the value from inside the optional or the default value used as a back up.*/
+/*Here’s a function that accepts an integer as its only parameter and returns an optional string:*/
+func username(for id: Int) -> String? {
+    if id == 1 {
+        return "Taylor Swift"
+    } else {
+        return nil
+    }
+}
+let user = username(for 15) ?? "Anonymous"
