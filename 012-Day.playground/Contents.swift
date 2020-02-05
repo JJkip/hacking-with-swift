@@ -96,3 +96,17 @@ struct Person {
     }
 }
 
+//Typecasting
+class Animal {}
+class Finsh: Animal {}
+class Dog: Animal {
+    func makeNoice() {
+        print("Woof")
+    }
+}
+let pets = [Fish(), Dog(), Fish(), Dog()]
+for pet in pets {
+    if let dog = pet as? Dog {
+        dog.makeNoise()
+    }
+}
