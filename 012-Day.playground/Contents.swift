@@ -46,4 +46,11 @@ func username(for id: Int) -> String? {
         return nil
     }
 }
-let user = username(for 15) ?? "Anonymous"
+let user = username(for: 15) ?? "Anonymous"
+/*That will check the result that comes back from the username() function: if it’s a string then it will be unwrapped and placed into user, but if it has nil inside then “Anonymous” will be used instead.*/
+
+//Optional chaining
+let names = ["John","Paul","George","Ringo"]
+
+let beatle = names.first?.uppercased()
+/*That question mark is optional chaining – if first returns nil then Swift won’t try to uppercase it, and will set beatle to nil immediately.*/
