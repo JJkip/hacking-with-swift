@@ -54,3 +54,45 @@ let names = ["John","Paul","George","Ringo"]
 
 let beatle = names.first?.uppercased()
 /*That question mark is optional chaining – if first returns nil then Swift won’t try to uppercase it, and will set beatle to nil immediately.*/
+
+//Optional try
+enum PasswordError: Error {
+    case obvious
+}
+
+func checkPassword(_ password: String) throws -> Bool {
+    if password == "password" {
+        throw PasswordError.obvious
+    }
+
+    return true
+}
+
+do {
+    try checkPassword("password")
+    print("That password is good!")
+} catch {
+    print("You can't use that password.")
+}
+if let result = try? checkPassword("password"){
+    print("Result was \(result)")
+} else {
+    print("D'oh.")
+}
+
+try! checkPassword("sekrit")
+print("OK!")
+
+//Failable initializers
+struct Person {
+    var id: String
+    
+    init?(id: String){
+        if id.count == 9 {
+            self.id = id
+        } else {
+            return nil
+        }
+    }
+}
+
