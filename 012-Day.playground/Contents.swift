@@ -22,3 +22,11 @@ func greet(_ name: String?){
     }
     print ("Hello, \(unwrapped)!")
 }
+
+//Force unwrapping
+let str = "5"
+let num = Int(str)
+/*Even though Swift isn’t sure the conversion will work, you can see the code is safe so you can force unwrap the result by writing ! after Int(str), like this:*/
+let num2 = Int(str)!
+/*Swift will immediately unwrap the optional and make num a regular Int rather than an Int?. But if you’re wrong – if str was something that couldn’t be converted to an integer – your code will crash.
+As a result, you should force unwrap only when you’re sure it’s safe – there’s a reason it’s often called the crash operator.*/
