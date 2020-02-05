@@ -98,9 +98,9 @@ struct Person {
 
 //Typecasting
 class Animal {}
-class Finsh: Animal {}
+class Fish: Animal {}
 class Dog: Animal {
-    func makeNoice() {
+    func makeNoise() {
         print("Woof")
     }
 }
