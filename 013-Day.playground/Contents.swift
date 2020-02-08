@@ -66,6 +66,16 @@ var stayOutTooLateX = true
 stayOutTooLateX
 !stayOutTooLateX
 
-var nameY = "Tim McGraw"
+var nameZ = "Tim McGraw"
 nameY == "Tim McGraw"
 nameY != "Tim McGraw"
+
+//String interpolation
+var first_name = "Joy"
+"Your first name is \(first_name)"
+"Your fisrt name is " + first_name
+var ageD = 20
+var address = "Jamuhuri"
+var latitudeD = 36.16667
+"Your name is \(first_name), your age is \(ageD), and your residential address is \(address) at \(latitudeD)"
+"You are \(ageD) years old. In another \(ageD) years you will be \(ageD * 2)"
