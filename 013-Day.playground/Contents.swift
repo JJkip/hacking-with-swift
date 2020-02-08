@@ -79,3 +79,20 @@ var address = "Jamuhuri"
 var latitudeD = 36.16667
 "Your name is \(first_name), your age is \(ageD), and your residential address is \(address) at \(latitudeD)"
 "You are \(ageD) years old. In another \(ageD) years you will be \(ageD * 2)"
+
+//Arrays
+var evenNumbers = [2,4,6,8]
+var songs =  ["Shake it Off", "You Belong with Me", "Back to December"]
+songs[0]
+songs[1]
+songs[2]
+type(of: songs)
+
+var songsMix: [Any] = ["Shake it Off", "You Belong with Me", "Back to December", 3]
+/*That uses a type annotation to make it clear we want an array of strings, and it assigns an empty array (that's the [] part) to it.*/
+var songsEmpty: [String] = []
+/*That means the same thing: the () tells Swift we want to create the array in question, which is then assigned to songs using type inference. This option is two characters shorter*/
+var songsAnotherWay = [String]()
+
+var all_Songs = songs + songsMix
+all_Songs += ["Everything has Changed"]
