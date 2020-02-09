@@ -96,3 +96,16 @@ var songsAnotherWay = [String]()
 
 var all_Songs = songs + songsMix
 all_Songs += ["Everything has Changed"]
+
+//Dictionaries
+var person = [
+                "first": "Taylor",
+                "middle": "Alison",
+                "last": "Swift",
+                "month": "December",
+                "website": "taylorswift.com"
+            ]
+
+person["middle"]
+person["month"]
+
