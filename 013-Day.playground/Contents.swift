@@ -114,7 +114,7 @@ var action: String
 var person_char = "lover"
 if person_char == "lover" {
     action = "WOW"
-} else if person == "player" {
+} else if person_char == "player" {
     action = "play"
 } else {
     action = "cruise"
@@ -131,3 +131,26 @@ if stayOutTooLateR && nothingInBrainR {
 if !stayOutTooLateR && !nothingInBrainR {
     action = "cruise"
 }
+//Loops
+print("1 x 10 is \(1 * 10)")
+print("2 x 10 is \(2 * 10)")
+print("3 x 10 is \(3 * 10)")
+print("4 x 10 is \(4 * 10)")
+print("5 x 10 is \(5 * 10)")
+print("6 x 10 is \(6 * 10)")
+print("7 x 10 is \(7 * 10)")
+print("8 x 10 is \(8 * 10)")
+print("9 x 10 is \(9 * 10)")
+print("10 x 10 is \(10 * 10)")
+
+for i in 1...10 {
+    print("\(i) x 10 os \(i * 10)")
+}
+
+var str = "Don lie"
+for _ in 1...5 {
+    str += "Please"
+}
+print(str)
+
+//Looping over arrays
