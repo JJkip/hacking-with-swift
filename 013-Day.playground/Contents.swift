@@ -154,7 +154,7 @@ for _ in 1...5 {
 print(str)
 
 //Looping over arrays
-var songsX = ["Shake it off","You benlong with me","Look what you made me do"]
+var songsX = ["Shake it off","You belong with me","Look what you made me do"]
 
 for song in songsX {
     print("My favourite song is \(song)")
@@ -179,4 +179,25 @@ for i in 0 ..< people.count{
         strA += " \(actions[i])"
     }
     print(strA)
+}
+
+//While loops
+var counter = 0
+while true {
+    print("Counter is now \(counter)")
+    counter += 1
+    
+    if counter == 10 {
+        break
+    }
+}
+
+var songsO = ["Shake it Off", "You Belong with Me", "Look What You Made Me Do"]
+
+for song in songsO {
+    if song == "You Belong with Me" {
+        continue
+    }
+
+    print("My favorite song is \(song)")
 }
