@@ -63,4 +63,19 @@ if albumIsTaylor(name: "Blue") {
     print("Who made that?!")
 }
 
-
+//Optionals
+func getHaterStatus() -> String {
+    return "Hate"
+}
+func getHaterStatus() -> String? {
+    return "Hate"
+}
+func getHaterStatus(weather: String) -> String?{
+    if weather == "sunny"{
+        return nil
+    } else {
+        return "Hate"
+    }
+}
+var status: String
+status = getHaterStatus(weather: "rainy")
