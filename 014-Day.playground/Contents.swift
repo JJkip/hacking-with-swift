@@ -77,5 +77,34 @@ func getHaterStatus(weather: String) -> String?{
         return "Hate"
     }
 }
-var status: String
+var status: String?
 status = getHaterStatus(weather: "rainy")
+func takeHaterAction(status: String) {
+    if status == "Hate" {
+        print("Hating")
+    }
+}
+
+if let unwrappedStatus = status {
+    // unwrappedStatus contains a non-optional value!
+} else {
+    // in case you want an else block, here you go…
+}
+
+func getHaterStatusX(weather: String) -> String? {
+    if weather == "sunny" {
+        return nil
+    } else {
+        return "Hate"
+    }
+}
+
+func takeHaterActionX(status: String) {
+    if status == "Hate" {
+        print("Hating")
+    }
+}
+
+if let haterStatus = getHaterStatusX(weather: "rainy") {
+    takeHaterActionX(status: haterStatus)
+}
