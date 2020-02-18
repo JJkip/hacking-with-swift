@@ -108,3 +108,32 @@ func takeHaterActionX(status: String) {
 if let haterStatus = getHaterStatusX(weather: "rainy") {
     takeHaterActionX(status: haterStatus)
 }
+
+func yearAlbumReleased(name: String) -> Int {
+    if name == "Taylor Swift" { return 2006 }
+    if name == "Fearless" { return 2008 }
+    if name == "Speak Now" { return 2010 }
+    if name == "Red" { return 2012 }
+    if name == "1989" { return 2014 }
+
+    return 0
+}
+func yearAlbumReleased(name: String) -> Int? {
+    if name == "Taylor Swift" { return 2006 }
+    if name == "Fearless" { return 2008 }
+    if name == "Speak Now" { return 2010 }
+    if name == "Red" { return 2012 }
+    if name == "1989" { return 2014 }
+
+    return nil
+}
+var items = ["James", "John", "Sally"]
+func position(of string: String, in array: [String]) -> Int {
+    for i in 0 ..< array.count {
+        if array[i] == string {
+            return i
+        }
+    }
+
+    return 0
+}
