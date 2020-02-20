@@ -184,4 +184,6 @@ print(str.uppercased())
 let albumB = albumReleasedZ(year: 2006)?.uppercased()
 print("The album is \(albumB)")
 /*let albumC = albumReleasedZ(year: 2006)?.someOptionalValue?.someOtherOptionalValue?.whatever*/
-
+//The nil coalescing operator
+let albumD = albumReleasedZ(year: 2006) ?? "unknown"
+print("The album is \(albumD)")
