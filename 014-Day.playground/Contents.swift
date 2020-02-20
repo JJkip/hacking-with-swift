@@ -164,3 +164,24 @@ if year == nil {
  An implicitly unwrapped optional might contain a value, or might not. But it does not need to be unwrapped before it is used. Swift won't check for you, so you need to be extra careful. Example: String! might contain a string, or it might contain nil – and it's down to you to use it appropriately. It’s like a regular optional, but Swift lets you access the value directly without the unwrapping safety. If you try to do it, it means you know there’s a value there – but if you’re wrong your app will crash.
 
  */
+
+//Optional chaining
+func albumReleasedZ(year: Int) -> String? {
+    switch year {
+    case 2006: return "Taylor Swift"
+    case 2008: return "Fearless"
+    case 2010: return "Speak Now"
+    case 2012: return "Red"
+    case 2014: return "1989"
+    default: return nil
+    }
+}
+
+let albumA = albumReleasedZ(year: 2006)
+print("The album is \(albumA)")
+let str = "Hello world"
+print(str.uppercased())
+let albumB = albumReleasedZ(year: 2006)?.uppercased()
+print("The album is \(albumB)")
+/*let albumC = albumReleasedZ(year: 2006)?.someOptionalValue?.someOtherOptionalValue?.whatever*/
+
