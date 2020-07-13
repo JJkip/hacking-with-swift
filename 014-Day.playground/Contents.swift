@@ -187,3 +187,31 @@ print("The album is \(albumB)")
 //The nil coalescing operator
 let albumD = albumReleasedZ(year: 2006) ?? "unknown"
 print("The album is \(albumD)")
+
+
+//Enumerations
+
+enum WeatherType {
+    case sun
+    case cloud
+    case rain
+    case wind(speed: Int)
+    case snow
+}
+func getHaterStatusZ(weather: WeatherType) -> String?{
+    switch weather {
+    case .sun:
+        return nil
+    case .wind(let speed) where speed < 10:
+        return "meh"
+    case .cloud:
+        return "dislike"
+    case .rain:
+        return "Hate"
+    default:
+        return "no input"
+    }
+}
+
+getHaterStatusZ(weather: .cloud)
+getHaterStatusZ(weather: WeatherType.wind(speed: 5))
