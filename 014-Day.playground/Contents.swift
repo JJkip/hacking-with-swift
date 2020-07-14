@@ -215,3 +215,28 @@ func getHaterStatusZ(weather: WeatherType) -> String?{
 
 getHaterStatusZ(weather: .cloud)
 getHaterStatusZ(weather: WeatherType.wind(speed: 5))
+
+//Structs
+struct Person{
+    var clothes: String
+    var shoes: String
+    //Functions inside structs
+    func describe(){
+        print("i like wearing \(clothes) with \(shoes)")
+    }
+}
+
+var taylor = Person(clothes: "T-shirts", shoes: "Sneakers")
+var other = Person(clothes: "Short skirts", shoes: "High heals")
+
+print(taylor.clothes)
+print(other.shoes)
+
+var taylorCopy = taylor
+taylorCopy.shoes = "flip flops"
+
+print(taylor)
+print(taylorCopy)
+
+
+
