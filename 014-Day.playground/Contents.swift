@@ -238,5 +238,14 @@ taylorCopy.shoes = "flip flops"
 print(taylor)
 print(taylorCopy)
 
+//Classes
 
-
+class Person {
+    var clothes: String
+    var shoes: String
+    
+    init(xclothes: String, xshoes: String){
+        self.clothes = xclothes
+        self.shoes = xshoes
+    }
+}
