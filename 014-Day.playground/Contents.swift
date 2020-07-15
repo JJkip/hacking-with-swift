@@ -311,3 +311,15 @@ func updateUI(msg: String){
 var taylorA = PersonA(clothes: "T-shirt")
 taylorA.clothes = "short skirts"
 
+//Computed properties
+struct PersonB{
+    var age: Int
+    var ageInDogyears: Int{
+        get{
+            return age * 7
+        }
+    }
+}
+
+var fan = PersonB(age: 25)
+print(fan.ageInDogyears)
