@@ -46,3 +46,20 @@ print(TaylorFan.favoriteSong)
 print(fanB.age)
 print(TaylorFan.favoriteSong + fanB.name)
 
+//Access control
+
+/*Public: this means everyone can read and write the property.
+Internal: this means only your Swift code can read and write the property. If you ship your code as a framework for others to use, they won’t be able to read the property.
+File Private: this means that only Swift code in the same file as the type can read and write the property.
+Private: this is the most restrictive option, and means the property is available only inside methods that belong to the type, or its extensions.*/
+
+class TylorFanC {
+    private var name: String?
+    fileprivate var age: Int
+    
+    init(name: String, age: Int) {
+        self.name = name
+        self.age = age
+    }
+}
+
