@@ -32,3 +32,17 @@ struct PersonB{
 
 var fan = PersonB(age: 25)
 print(fan.ageInDogyears)
+
+//Static properties and methods
+struct TaylorFan{
+    static var favoriteSong = "Look what you made me do!"
+    
+    var name: String
+    var age: Int
+}
+
+let fanB = TaylorFan(name: "James", age: 25)
+print(TaylorFan.favoriteSong)
+print(fanB.age)
+print(TaylorFan.favoriteSong + fanB.name)
+
