@@ -128,3 +128,17 @@ let  number = 5
 //let text = number as! String
 let text = String(number)
 print(text)
+
+//Closures
+let vw = UIView()
+
+UIView.animate(withDuration: 0.5, animations: {
+    vw.alpha = 0
+})
+
+//Trailing closures
+let vw = UIView()
+
+UIView.animate(withDuration: 0.5) {
+    vw.alpha = 0
+}
