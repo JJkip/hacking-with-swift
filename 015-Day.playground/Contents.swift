@@ -130,15 +130,45 @@ let text = String(number)
 print(text)
 
 //Closures
-let vw = UIView()
+let vwA = UIView()
 
 UIView.animate(withDuration: 0.5, animations: {
-    vw.alpha = 0
+    vwA.alpha = 0
 })
 
 //Trailing closures
-let vw = UIView()
+let vwB = UIView()
 
 UIView.animate(withDuration: 0.5) {
-    vw.alpha = 0
+    vwB.alpha = 0
+}
+
+//Protocols
+
+protocol Employee {
+    var name: String {get set}
+    var jobTitle: String{get set}
+    func doWork()
+}
+
+struct Excecutive: Employee{
+    var name = "Steve jobs"
+    var jobTitle = "CEO"
+    func doWork() {
+        print("I'm strategizing!")
+    }
+}
+
+struct Manager: Employee {
+    var name = "Maurice Moss"
+    var jobTitle = "Head of IT"
+    func doWork(){
+        print("I'm turning it off and on again.")
+    }
+}
+
+let staff: [Employee] = [Excecutive(), Manager()]
+
+for person in staff {
+    person.doWork()
 }
