@@ -172,3 +172,29 @@ let staff: [Employee] = [Excecutive(), Manager()]
 for person in staff {
     person.doWork()
 }
+
+//Extensions
+var myInt = 0
+
+extension Int {
+   mutating func plusOne() -> Int{
+//        return self + 1
+        self + 1
+    }
+}
+
+myInt.plusOne()
+//5.plusOne()
+
+var myIntB = 10
+myIntB.plusOne()
+myIntB
+var stringWithWhiteSpaces = "s w i f t    i o s"
+
+extension String{
+    mutating func trim() {
+        self = trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+}
+
+stringWithWhiteSpaces.trim()
