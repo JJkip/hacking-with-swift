@@ -22,7 +22,9 @@ func greet(_ name: String?){
     }
     print ("Hello, \(unwrapped)!")
 }
-
+var xName: String? = nil
+greet(xName)
+greet("jayjay")
 //Force unwrapping
 let str = "5"
 let num = Int(str)
