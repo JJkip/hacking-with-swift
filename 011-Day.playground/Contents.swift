@@ -17,7 +17,17 @@ func displayID(thing: Identifiable){
 }
 let jay = User(id: "JJ")
 displayID(thing: jay)
+
 //Protocol inheritance
+/*Here’s an example of a protocol with a single instance property requirement*/
+protocol FullyNamed{
+    var fullName: String {get}
+}
+struct Person: FullyNamed {
+    var fullName: String
+}
+let john = Person(fullName: "John Appleseed")
+
 protocol Payable{
     func calculateWages() -> Int
 }
