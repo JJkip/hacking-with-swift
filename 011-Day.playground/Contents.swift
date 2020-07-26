@@ -61,6 +61,29 @@ print("Here's a random number: \(generator.random())")
 print("And another one: \(generator.random())")
 // Prints "And another one: 0.729023776863283"
 
+
+//Mutating Method Requirements
+protocol Togglable{
+    mutating func toggle()
+}
+
+enum OnOffSwitch: Togglable {
+    case off, on
+    mutating func toggle() {
+        switch  self {
+        case .off:
+            self = .on
+        case .on:
+            self  = .off
+        }
+    }
+}
+
+var lightSwitch = OnOffSwitch.off
+lightSwitch.toggle()
+//lightSwitch is now equal to .on
+
+
 protocol Payable{
     func calculateWages() -> Int
 }
