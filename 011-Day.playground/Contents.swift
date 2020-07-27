@@ -84,6 +84,12 @@ lightSwitch.toggle()
 //lightSwitch is now equal to .on
 
 
+//Initializer Requirements
+protocol SomeProtocol{
+    init(someParameter: Int)
+}
+
+
 protocol Payable{
     func calculateWages() -> Int
 }
