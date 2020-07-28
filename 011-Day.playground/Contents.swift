@@ -88,8 +88,26 @@ lightSwitch.toggle()
 protocol SomeProtocol{
     init(someParameter: Int)
 }
+//Class Implementations of Protocol Initializer Requirements
+class SomeClass: SomeProtocol{
+    required init(someParameter: Int) {
+        //initializer implementation goes here
+    }
+}
+/*f a subclass overrides a designated initializer from a superclass, and also implements a matching initializer requirement from a protocol, mark the initializer implementation with both the required and override modifiers:*/
 
-
+protocol SomeProtocol_B{
+    init()
+}
+class SomeSuperClass_B{
+    init()
+}
+class SomeSubCLass_B: SomeSuperClass_B, SomeProtocol_B{
+    // "required" from SomeProtocol conformance; "override" from SomeSuperClass
+    required override init(){
+        //initializer implementation goes here
+    }
+}
 protocol Payable{
     func calculateWages() -> Int
 }
