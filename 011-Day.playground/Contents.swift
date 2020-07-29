@@ -108,6 +108,9 @@ class SomeSubCLass_B: SomeSuperClass_B, SomeProtocol_B{
         //initializer implementation goes here
     }
 }
+
+//Protocols as Types
+
 protocol Payable{
     func calculateWages() -> Int
 }
