@@ -122,6 +122,8 @@ class Dice{
     }
 }
 
+//Protocal Delegation
+
 protocol Payable{
     func calculateWages() -> Int
 }
