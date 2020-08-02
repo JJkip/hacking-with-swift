@@ -123,6 +123,16 @@ class Dice{
 }
 
 //Protocal Delegation
+protocol DiceGame{
+    var dice: Dice {get}
+    func play ()
+}
+protocol DiceGameDelegate: AnyObject{
+    func gameDidStart(_ game: DiceGame)
+    func game(_ game: DiceGame, didStartNewTurnWithDiceRoll diceRoll: Int)
+    func gaameDidEnd(_ game: DiceGame)
+}
+
 
 protocol Payable{
     func calculateWages() -> Int
