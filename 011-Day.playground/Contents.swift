@@ -43,6 +43,14 @@ class Starship: FullyNamed{
 var ncc1701 = Starship(name: "Enterprise", prefix: "USS")
 ncc1701.fullName
 
+//Method Requirements
+protocol SomeProtocol_A {
+    static func somrTypeMethod_A()
+}
+
+protocol RandomNumberGenerator {
+    func random() -> Double
+}
 
 class LinearCongruentialGenerator: RandomNumberGenerator {
     var lastRandom = 42.0
@@ -114,20 +122,20 @@ class SomeSubCLass_B: SomeSuperClass_B, SomeProtocol_B{
 //Protocols as Types
 class Dice {
     let sides: Int
-    var generator: RandomNumberGenerator
+    let generator: RandomNumberGenerator
     init(sides: Int, generator: RandomNumberGenerator) {
         self.sides = sides
         self.generator = generator
     }
     func roll() -> Int {
-//        return Int(generator.random() * Double(sides)) + 1
-        return Int(Double(generator.next()) * Double(sides)) + 1
+        return Int(generator.random() * Double(sides)) + 1
+//        return Int(Double(generator.next()) * Double(sides)) + 1
     }
 }
-//var d6 = Dice(sides: 6, generator:  LinearCongruentialGenerator())
-//for _ in 1...5 {
-//    print("Random Dice roll is \(d6.roll())")
-//}
+var d6 = Dice(sides: 6, generator:  LinearCongruentialGenerator())
+for _ in 1...5 {
+    print("Random Dice roll is \(d6.roll())")
+}
 
 //Protocal Delegation
 protocol DiceGame{
@@ -170,6 +178,35 @@ class SnakesAndLadders: DiceGame {
         delegate?.gameDidEnd(self)
     }
 }
+
+class DiceGameTracker: DiceGameDelegate{
+    var numberOfTurns = 0
+    func gameDidStart(_ game: DiceGame) {
+        numberOfTurns = 0
+        if game is SnakesAndLadders {
+            print("Started a new game of Snakes and Ladders")
+        }
+        print("The game is using a \(game.dice.sides)-sided dice")
+    }
+    func game(_ game: DiceGame, didStartNewTurnWithDiceRoll diceRoll: Int) {
+        numberOfTurns += 1
+        print("Rolled a \(diceRoll)")
+    }
+    func gameDidEnd(_ game: DiceGame) {
+        print("The game lasted for \(numberOfTurns) turns")
+    }
+}
+let tracker = DiceGameTracker()
+let game = SnakesAndLadders()
+game.delegate = tracker
+game.play()
+
+//Adding Protocol Conformance with an Extension
+protocol TextRepresentable{
+    var texttualDescription: String {get}
+}
+
+
 
 protocol Payable{
     func calculateWages() -> Int
