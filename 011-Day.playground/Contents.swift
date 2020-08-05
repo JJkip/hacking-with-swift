@@ -203,9 +203,18 @@ game.play()
 
 //Adding Protocol Conformance with an Extension
 protocol TextRepresentable{
-    var texttualDescription: String {get}
+    var textualDescription: String {get}
+}
+extension SnakesAndLadders: TextRepresentable {
+    var textualDescription: String {
+        return "A game of Snakes and Ladders with \(finalSquare) squares"
+    }
 }
 
+//Conditionally Conforming to a Protocol
+
+print(game.textualDescription)
+// Prints "A game of Snakes and Ladders with 25 squares"
 
 
 protocol Payable{
