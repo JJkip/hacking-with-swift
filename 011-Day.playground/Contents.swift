@@ -210,9 +210,22 @@ extension SnakesAndLadders: TextRepresentable {
         return "A game of Snakes and Ladders with \(finalSquare) squares"
     }
 }
-
+extension Dice: TextRepresentable {
+    var textualDescription: String{
+        return "A \(sides)-sided dice"
+    }
+}
+let d12 =  Dice(sides: 12, generator: LinearCongruentialGenerator())
+print(d12.textualDescription)
 //Conditionally Conforming to a Protocol
-
+extension Array: TextRepresentable where Element: TextRepresentable{
+    var textualDescription: String{
+        let itemsAsText = self.map { $0.textualDescription}
+        return "[" + itemsAsText.joined(separator: ", ") + "]"
+    }
+}
+let myDice = [d6, d12]
+print(myDice.textualDescription)
 print(game.textualDescription)
 // Prints "A game of Snakes and Ladders with 25 squares"
 
