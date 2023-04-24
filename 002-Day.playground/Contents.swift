@@ -7,8 +7,27 @@ let george = "George Harrison"
 let ringo = "Ringo Starr"
 
 let beatles = [john, paul, george, ringo]
-
 beatles[2]
+    
+var characters = ["Lana", "Pam", "Ray", "Sterling"]
+print(characters.count)
+characters.remove(at: 2)
+print(characters.count)
+
+for character in characters {
+    print(character)
+}
+characters.removeAll()
+print(characters.count)
+
+let bondMovies = ["Casino Royale", "Spectre", "No Time To Die"]
+print(bondMovies.contains("Spectre"))
+let cities = ["Nairobi","Kisumu","Mombasa","Nakuru"]
+print(cities.sorted())
+let presidents = ["Bush", "Obama", "Trump", "Biden"]
+let reversedPresidents = presidents.reversed()
+print(reversedPresidents)   
+
 
 //Sets
 let colors = Set(["red","green","blue"])
@@ -57,8 +76,8 @@ var results = [Int]()
 var words = Set<String>()
 var numbers = Set <Int>()
 /*arrays and dictionaries with similar syntax*/
-var scores = Dictionary<String,Init>()
-var results = Array<Int>()
+var scores = Dictionary<String,Int>()
+var results4 = Array<Int>()
 
 //Enumerations
 let result = "failure"
