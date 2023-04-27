@@ -149,6 +149,13 @@ enum Activity2 {
     case singing(volume: Int)
 }
 let talking = Activity2.talking(topic: "football")
+/*case can be used onced e.g*/
+enum WeekDay{
+    case monday, tuesday, wednesday, thursday, friday
+}
+var day = WeekDay.monday
+day = .tuesday
+day = .friday
 
 //Enum raw values
 enum Planet: Int {
