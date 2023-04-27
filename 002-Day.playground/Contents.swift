@@ -172,3 +172,10 @@ enum Planet2: Int {
     case earth
     case mars
 }
+
+//Type Annotation
+/*Arrays*/
+var soda: [String] = ["Fanta","Krest","Coke"]
+var faTeams: [String] = [String]()
+var cities2: [String] = []
+var clues = [String]()
