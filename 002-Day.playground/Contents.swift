@@ -109,6 +109,15 @@ var results = [Int]()
 /*empty set*/
 var words = Set<String>()
 var numbers = Set <Int>()
+var actors = Set(["John Wink","Tom Cruise", "Nicholas Cage", "Samuel Jackson"])
+print(actors)
+var people = Set<String>()
+people.insert("John Wink")
+people.insert("Tom Cruise")
+people.insert("Nicholas Cage")
+people.insert("Samuel Jackson")
+print(people)
+
 /*arrays and dictionaries with similar syntax*/
 var scores = Dictionary<String,Int>()
 var results4 = Array<Int>()
