@@ -179,3 +179,15 @@ var soda: [String] = ["Fanta","Krest","Coke"]
 var faTeams: [String] = [String]()
 var cities2: [String] = []
 var clues = [String]()
+/*Enums*/
+enum UIStyle {
+    case light, dark, system
+}
+var style: UIStyle = UIStyle.light
+style = .dark
+/*constants*/
+let username: String
+/**we do lots of  complex logic**/
+username = "jayjay"
+/**we do lots of  complex logic again**/
+print(username)
