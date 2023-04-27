@@ -26,7 +26,7 @@ let cities = ["Nairobi","Kisumu","Mombasa","Nakuru"]
 print(cities.sorted())
 let presidents = ["Bush", "Obama", "Trump", "Biden"]
 let reversedPresidents = presidents.reversed()
-print(reversedPresidents)   
+print(reversedPresidents)
 
 
 //Sets
@@ -65,11 +65,45 @@ let favoriteIceCream = [
 favoriteIceCream["Paul"]
 favoriteIceCream["Charlotte"]
 favoriteIceCream["Charlotte", default: "Unknown"]
+let employee2 = [
+    "name":"Tom Makmende",
+    "job":"Plumber",
+    "location":"Nairobi",
+    "gender":"Identifies as Male",
+]
+
+print(employee2["name", default: "Unkown"])
+print(employee2["job",default: "Unknown"])
+print(employee2["gender", default: "Unknown"])
+
+let hasGraduated = [
+    "John": true,
+    "Peter": true,
+    "Mary": false
+]
+
+let olympics = [
+    2012:"London",
+    2016: "Rio de Jenerio",
+    2021: "Tokyo"
+]
+
+print(olympics[2012, default: "Unknown"])
 
 //Creating empty collections
-/*empty dictionary*/
+/*empty dictionary using explicit types*/
+var heights4 = [String: Int]()
+heights4["Yao Ming"] = 229
+heights4["Shaquille O'Neal"] = 216
+heights4["James LeBron"] = 206
+
 var teams = [String: String]()
 teams["Paul"] = "Red"
+/*Dictionary overiding previous keys*/
+var archEnemies = [String: String]()
+archEnemies["Batman"] = "The Joker"
+archEnemies["Superman"] = "Lex Luther"
+archEnemies["Batman"] = "Penguin"
 /*empty array*/
 var results = [Int]()
 /*empty set*/
