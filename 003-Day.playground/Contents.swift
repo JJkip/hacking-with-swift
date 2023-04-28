@@ -43,6 +43,7 @@ firstScore1 >= secondScore2
 "Taylor" <= "Swift"
 
 //Conditions
+
 let firstCard = 11
 let secondCard = 10
 if firstCard + secondCard == 21 {
@@ -63,6 +64,47 @@ if firstCard + secondCard == 2 {
     print("Regular cards")
 }
 
+//Check a condition is true or false
+/*So, if the string inside ourName comes before the string inside friendName when sorted alphabetically, it prints ourName first then friendName, exactly as we wanted.*/
+let ourName = "Dave Lister"
+let friendName = "Arnold Rimmer"
+
+if ourName < friendName {
+    print("It's \(ourName) vs \(friendName)")
+}
+if ourName > friendName {
+    print("It's \(friendName) vs \(ourName)")
+}
+
+var numbers = [1,2,3]
+numbers.append(4)
+if numbers.count > 3 {
+    numbers.remove(at: 0)
+}
+print(numbers)
+
+let country = "Canada"
+if country == "Australia" {
+    print("G'day!")
+}
+
+var name = "Taylor Swift"
+if name != "Anonymous" {
+    print("Welcome, \(name)")
+}
+if name == "" {
+    name = "Anonymous"
+}
+print("Welcome, \(name)!")
+if name.count == 0 {
+    name = "Anonymous"
+}
+if name.isEmpty == true {
+    name = "Anonymous"
+}
+if name.isEmpty {
+    name = "Anonymous"
+}
 //Combining conditions
 let age1 = 12
 let age2 = 21
