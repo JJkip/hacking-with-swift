@@ -253,10 +253,32 @@ default:
 let examScore = 85
 
 switch examScore {
-case 0..<50:
+case 0 ..< 50:
     print("You failed badly")
-case 50..<85
+case 50 ..< 85:
     print("You did OK.")
 default:
     print("You did great")
 }
+
+//ternary conditional operator
+let age = 18
+let canVote = age >= 18 ? "Yes" : "No"
+let canVote2 = (age >= 18) ? "Yes" : "No"
+
+let hour = 23
+print(hour < 12 ? "It's before non" : "It's after noon")
+
+//let names: [Strings] = [Strings]()
+//let names: [String] = []
+//let names = [Strings]()
+let names = ["John", "Mary", "Peter"]
+let crewCount = names.isEmpty ? "No one" : "\(names.count) people"
+print(crewCount)
+
+enum Theme {
+    case dark, light, system
+}
+let theme = Theme.dark
+let background = theme == .dark ? "black" : "white"
+print(background)
