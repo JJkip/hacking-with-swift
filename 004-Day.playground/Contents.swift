@@ -6,10 +6,20 @@ let count = 1...10
 for number in count {
     print("Number is \(number)")
 }
+
+for i in 1...5 {
+    print("5 x \(i) is \(5 * i)")
+}
+
 /*with arrays*/
 let albums = ["Red","1989","Reputation"]
 for album in albums{
     print("\(album) in on apple music")
+}
+
+let platforms = ["iOS", "macOS", "tvOS", "watchOS"]
+for os in platforms {
+    print("Swift works great on \(os).")
 }
 
 /*replacing the loop constant*/
@@ -35,9 +45,9 @@ repeat {
 } while numberz <= 20
 print("Ready or not, here I come!")
 
-while false {
-    print("This is false")
-}
+//while false {
+//    print("This is false")
+//}
 
 repeat{
     print("This is false")
@@ -63,6 +73,28 @@ while countDown >= 3 {
 }
 
 //Exiting multiple loops
+/*Loops inside lopps*/
+for i in 1...5 {
+    print("The \(i) times:")
+    for j in 1...5 {
+        print("\(j) x \(i) is \(j * i)")
+    }
+//    print()
+}
+/*excluding the final number: ..<*/
+for i in 1...5 {
+    print("Counting from 1 though 5: \(i)")
+}
+print()
+for i in 1..<5 {
+    print("Counting 1 upto 5: \(i)")
+}
+/*looping without the loop variable*/
+var lyric = "Haters gonna"
+for _ in 1...5 {
+    lyric += " hate"
+}
+print(lyric)
 /*calculating the times tables from 1 through 10*/
 for i in 1...10 {
     for j in 1...10 {
