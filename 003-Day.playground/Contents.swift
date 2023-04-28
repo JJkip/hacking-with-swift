@@ -105,6 +105,7 @@ if name.isEmpty == true {
 if name.isEmpty {
     name = "Anonymous"
 }
+
 //Combining conditions
 let age1 = 12
 let age2 = 21
@@ -114,6 +115,22 @@ if age1 > 18 && age2 > 18 {
 if age1 > 18 || age2 > 18 {
     print("One of them is over 18")
 }
+enum TransportOption {
+    case airplane, helicopter, bicycle, car, scooter
+}
+
+let transport = TransportOption.airplane
+
+if transport == .airplane || transport == .helicopter {
+    print("Let's fly!")
+} else if transport == .bicycle {
+    print("I hope there's a bike path…")
+} else if transport == .car {
+    print("Time to get stuck in traffic.")
+} else {
+    print("I'm going to hire a scooter now!")
+}
+
 
 //The ternary operator
 let thirdCard = 11
