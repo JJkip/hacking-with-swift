@@ -212,10 +212,10 @@ default:
     print("Who are you?")
 }
 
-let day = 5
+let theDay = 5
 print("My true love gave to me…")
 
-switch day {
+switch theDay {
 case 5:
     print("5 golden rings")
 case 4:
