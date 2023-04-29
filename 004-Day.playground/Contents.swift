@@ -124,6 +124,27 @@ for i__ in 1...10 {
     print(i__)
 }
 
+let filenames = ["me.jpg", "work.txt", "sophie.jpg"]
+for filename in filenames {
+    if filename.hasSuffix(".jpg") == false {
+        continue
+    }
+    print("Found picture: \(filename)")
+}
+
+let number1 = 4
+let number2 = 14
+var multiples = [Int]()
+for i in 1...100000 {
+    if i.isMultiple(of: number1) && i.isMultiple(of: number2) {
+        multiples.append(i)
+        if multiples.count == 10 {
+            break
+        }
+    }
+}
+print(multiples)
+
 //Infinite loops
 var counter = 0
 
@@ -154,6 +175,7 @@ while roll != 20 {
     print("I roller a \(roll)")
 }
 print("Critical hit")
+
 
 
 
