@@ -145,6 +145,24 @@ for i in 1...100000 {
 }
 print(multiples)
 
+let number3 = 3
+let number5 = 5
+var multiplesX = [Int]()
+for y in 1...50 {
+    if y.isMultiple(of: number3) && y.isMultiple(of: number5){
+        multiplesX.append(y)
+        print("\(y) should print 'FizzBuzz'")
+    } else if y.isMultiple(of: number3) {
+        multiplesX.append(y)
+        print("\(y) should print 'Fizz'")
+    } else if y.isMultiple(of: number5) {
+        multiplesX.append(y)
+        print("\(y) should print 'Buzz'")
+    } else {
+        print("\(y) should print '\(y)'")
+    }
+}
+print(multiplesX)
 //Infinite loops
 var counter = 0
 
