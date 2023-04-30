@@ -70,6 +70,23 @@ print(pythagoras(a: 4, b: 6))
 
 //:TODO
 /*If you need to return multiple values, this is a perfect example of when to use tuples.*/
+//Return multiple values
+func getUser() -> (firstName: String, lastName: String){
+//    (firstName: "Dickson", lastName: "Kamau")
+    ("Dickson","Kamau")
+}
+let user = getUser()
+print("Name: \(user.firstName) \(user.lastName)")
+print("Name: \(getUser().firstName) \(getUser().lastName)")
+print("Name: \(user.0) \(user.1)")
+/**pulling the tuple apart into individual values **/
+let fName = user.firstName
+let lName = user.lastName
+print("Name: \(fName) \(lName)")
+let (aName, bName) =  getUser()
+print("Name: \(aName) \(bName)")
+let (xName, _) = getUser()
+print("Name: \(xName)")
 
 //Parameter labels
 func sayHello(to name: String){
