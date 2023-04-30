@@ -99,6 +99,32 @@ func greet(_ person: String){
     print("Hello, \(person)")
 }
 greet("James")
+//Another example of omitting parameter labels
+func isUppercase(our_string: String) -> Bool{
+    our_string == our_string.uppercased()
+}
+let ransom_string = "HELLO, WORLD"
+let result5 = isUppercase(our_string: ransom_string)
+/*👆VS👇*/
+func isUppercased(_ our_string: String) -> Bool {
+    our_string == our_string.uppercased()
+}
+let another_random_string = "HI THERE"
+let result6 = isUppercased(another_random_string)
+//Another example of omitting parameter labels
+func printTimesTableA(number: Int){
+    for i in 1...12 {
+        print ("\(i) x \(number) is \(i * number)")
+    }
+}
+printTimesTableA(number: 5)
+/*👆VS👇*/
+func printTimesTablesB(for number: Int) {
+    for i in 1...12 {
+        print("\(i) x \(number) is \(i * number)")
+    }
+}
+printTimesTablesB(for: 5)
 
 //Default parameters
 func greetings(_ person: String, nicely: Bool = true){
@@ -114,6 +140,23 @@ greetings("Taylor", nicely: false)
 func greetings2(_ person: String = "James"){
     print("Hello, \(person)")
 }
+
+//Customize Parameter Labels
+func rollDice(sides: Int, count: Int) -> [Int]{
+    //we will start with an empty array
+    var rolls = [Int]()
+    //roll as many dice as needed
+    for _ in 1...count {
+        let roll = Int.random(in: 1...sides)
+        rolls.append(roll)
+    }
+    //send  back all the rolls
+    return rolls
+}
+let rolls = rollDice(sides: 6, count: 4)
+
+let lyric =  "I see a red door and I want it painted black"
+print(lyric.hasPrefix("I see"))
 
 //Variadic functions
 /**Variadic functions accept zero or more of a specific parameter, and Swift converts the input to an array.*/
