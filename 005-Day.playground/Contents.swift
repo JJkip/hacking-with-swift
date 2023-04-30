@@ -30,15 +30,43 @@ func printTimesTables(numberY: Int, end: Int){
         print("\(i) x \(numberY) is \(i * numberY)")
     }
 }
-printTimesTables(numberY: 5, end: 20)
-printTimesTables(2, 8)
+printTimesTables(numberY: 2, end: 5)
+
 //Returning values
 func square2(number: Int) -> Int {
     return number * number
 }
 let result = square2(number: 8)
-
 print(result)
+
+func rollDice() -> Int {
+    return Int.random(in: 1...6)
+}
+let diceResult = rollDice()
+print(diceResult)
+
+func areLettersIdentical(string1: String, string2: String) -> Bool {
+    let first = string1.sorted()
+    let second = string2.sorted()
+    return first == second
+}
+areLettersIdentical(string1: "abc", string2: "cab")
+func areLettersIdentical2(string1: String, string2: String) -> Bool {
+    return string1.sorted() == string2.sorted()
+}
+func areLettersIdentical3(string1: String, string2: String) -> Bool {
+    string1.sorted() == string2.sorted()
+}
+
+func pythagoras(a: Double, b: Double) -> Double {
+    /*let input = (a * a) + (b * b)
+    let root = sqrt(input)
+    return root*/
+    sqrt((a * a)+(b * b))
+}
+let c = pythagoras(a: 3, b: 4)
+print(c)
+print(pythagoras(a: 4, b: 6))
 
 //:TODO
 /*If you need to return multiple values, this is a perfect example of when to use tuples.*/
