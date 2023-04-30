@@ -14,10 +14,24 @@ printHelp()
 //Accepting parameters
 
 func square(number: Int){
-    print(number * number)
+    print("\(number) x \(number) is \(number * number)")
 }
 square(number: 8)
 
+func printTimesTable(numberX: Int){
+    for i in 1...12 {
+        print("\(i) x \(numberX) is \(i * numberX)")
+    }
+}
+printTimesTable(numberX: 5)
+
+func printTimesTables(numberY: Int, end: Int){
+    for i in 1...end {
+        print("\(i) x \(numberY) is \(i * numberY)")
+    }
+}
+printTimesTables(numberY: 5, end: 20)
+printTimesTables(2, 8)
 //Returning values
 func square2(number: Int) -> Int {
     return number * number
