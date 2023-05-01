@@ -190,21 +190,32 @@ squareManyNumbers(numbers: 1,2,3,4,5)
 
 //Writing throwing functions
 enum PasswordError: Error {
-    case obvious
+    case short, obvious
 }
 
-func checkPassword(_ password: String) throws -> Bool{
-    if password == "password" {
-        throw PasswordError.obvious
+func checkPassword(_ password: String) throws -> String{
+    if password.count < 5 { throw PasswordError.short }
+    if password == "12345" { throw PasswordError.obvious }
+    
+    if password.count < 8 {
+        return "Ok"
+    } else if password.count < 10 {
+        return "Good"
+    } else {
+        return "Excellent"
     }
-    return true
 }
 //Running throwing functions
+let string = "12345"
 do {
-    try checkPassword("password")
-    print("That password is good!")
+    let result = try checkPassword(string)
+    print("That password is rating is: \(result)!")
+} catch PasswordError.short {
+    print("Please use a longer password.")
+} catch PasswordError.obvious {
+    print("I have the same combination of my luggage")
 } catch {
-    print("You can't use that password")
+    print("There was an error")
 }
 
 //inout parameters
