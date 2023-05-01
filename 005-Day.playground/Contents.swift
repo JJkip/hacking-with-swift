@@ -126,6 +126,21 @@ func printTimesTablesB(for number: Int) {
 }
 printTimesTablesB(for: 5)
 
+//Another example of omitting parameter labels
+func printTimesTablesC(numberY: Int, end: Int){
+    for i in 1...end {
+        print("\(i) x \(numberY) is \(i * numberY)")
+    }
+}
+printTimesTablesC(numberY: 2, end: 5)
+/*👆VS👇*/
+func printTimesTableD(for numberY: Int, end: Int){
+    for i in 1...end {
+        print("\(i) x \(numberY) is \(i * numberY)")
+    }
+}
+printTimesTableD(for: 2, end: 6)
+
 //Default parameters
 func greetings(_ person: String, nicely: Bool = true){
     if nicely == true {
@@ -157,6 +172,12 @@ let rolls = rollDice(sides: 6, count: 4)
 
 let lyric =  "I see a red door and I want it painted black"
 print(lyric.hasPrefix("I see"))
+
+//Provide default values for parameters
+var characters = ["Lana", "Pam", "Ray", "Stacy"]
+print(characters.count)
+characters.removeAll(keepingCapacity: true)
+print(characters.count)
 
 //Variadic functions
 /**Variadic functions accept zero or more of a specific parameter, and Swift converts the input to an array.*/
