@@ -218,7 +218,7 @@ do {
     print("There was an error")
 }
 
-//inout parameters
+//input parameters
 func doubleInPlace(number: inout Int){
     number *= 2
     print("The new number is: \(number)")
@@ -227,3 +227,59 @@ var myNum = 10
 var myNum2 = 5
 doubleInPlace(number: &myNum)
 doubleInPlace(number: &myNum2)
+
+//Binary search algorithm to find the integer square root of the input number.
+enum IntegerSqrtError: Error {
+    case outOfBounds
+    case noRoot
+}
+
+func integerSqrt(_ num: Int) throws -> Int {
+    guard num >= 1 && num <= 10_000 else {
+        throw IntegerSqrtError.outOfBounds
+    }
+    
+    var left = 1
+    var right = num
+    
+    while left <= right {
+        let mid = (left + right) / 2
+        if mid * mid == num {
+            return mid
+        } else if mid * mid < num {
+            left = mid + 1
+        } else {
+            right = mid - 1
+        }
+    }
+    
+    throw IntegerSqrtError.noRoot
+}
+
+do {
+    let checkSqrt = 12
+    let sqrt = try integerSqrt(checkSqrt)
+    print("The square root of \(checkSqrt) is \(sqrt).")
+} catch IntegerSqrtError.outOfBounds {
+    print("Error: The input number is out of bounds.")
+} catch IntegerSqrtError.noRoot {
+    print("Error: There is no integer square root for the number.")
+} catch {
+    print("Error: \(error)")
+}
+/*
+ This function uses the binary search algorithm to find the integer square root of the input number. We start by setting left to 1 and right to the input number. We then loop while left is less than or equal to right. At each iteration, we calculate the midpoint mid between left and right. If mid squared equals the input number, we've found the integer square root and return it. If mid squared is less than the input number, we move left to mid + 1. Otherwise, we move right to mid - 1. We keep doing this until we've found the largest integer whose square is less than or equal to the input number, which we return as the result of the function.
+ 
+ We've defined an IntegerSqrtError enum that has a case for the outOfBounds and a no root error.
+ 
+ In the function body, we first check whether the input number is within the allowed range of 1 to 10,000. If it's not, we throw the outOfBounds error. Otherwise, we proceed with the same binary search algorithm as before to compute the integer square root of the input number.
+ 
+ If the function throws an error, you can handle it using Swift's do-catch syntax.
+ 
+ If we get to the end of the while loop and haven't found the integer square root, we throw  the IntegerSqrtError enum called noRoot.
+ 
+ In the above, we're calling the integerSqrt function with an input number of 12, which doesn't have an integer square root. We're wrapping the function call in a do-catch block to handle any errors that may be thrown. In this case, the catch block for the noRoot error is executed, and we print an error message to the console. If any other error is thrown, we print a generic error message that includes the error description.
+ 
+
+
+ */
