@@ -186,6 +186,7 @@ let captainFirstTeamB = team.sorted {
     return $0 < $1
 }
 
+
 //MORE CLOSURE EXAMPLES
 /*A closure that takes two integers and returns their sum:*/
 let sum = { (a: Int, b: Int) -> Int in
@@ -202,6 +203,9 @@ print(doubleNumbers)
 let evenNumbers = numbers.filter { $0 % 2 == 0 }
 print(evenNumbers)
 print(evenNumbers.sorted())
+//Filtering an array of string with prefix S :
+let sOnly = team.filter { $0.hasPrefix("S")}
+print(sOnly)
 //Reducing an array to a single value
 let sumNumbers = numbers.reduce(0) { $0 + $1}
 print(sumNumbers)
