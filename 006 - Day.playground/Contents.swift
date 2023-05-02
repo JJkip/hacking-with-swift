@@ -189,6 +189,10 @@ print(doubleNumbers)
 let evenNumbers = numbers.filter { $0 % 2 == 0 }
 print(evenNumbers)
 print(evenNumbers.sorted())
+//Reducing an array to a single value
+let sumNumbers = numbers.reduce(0) { $0 + $1}
+print(sumNumbers)
+/*In the above example, the reduce method on the numbers array takes an initial value and a closure as arguments. The closure combines each element of the array with the accumulated value to produce a new value. The $0 and $1 shorthand syntax represent the accumulated value and the current element being reduced, respectively. The final result is the sum of all the elements in the array.*/
 
 /*Closures and how they can be used to create closures with captured values from its surrounding context. This means that it can access variables and constants from the scope in which it is defined. For example:*/
 func makeAdder(forIncreament amount: Int) -> (() -> Int) {
@@ -244,3 +248,4 @@ print(counter())
 print(counter())
 print(counter())
 /*In this example, the makeCounter function returns a closure that captures a local variable count from the enclosing scope. Each time the closure is called, the count variable is incremented and its new value is returned. The counter variable is assigned the returned closure and can be called multiple times to generate a sequence of incremented values.*/
+
