@@ -228,3 +228,19 @@ func performTaskInBackground(_ task: @escaping () -> Void) {
 performTaskInBackground {
     print("This task is running on a background thread")
 }
+/*In above example, the performTaskInBackground function takes a closure as an argument that represents a task to be performed on a background thread. The closure is executed asynchronously on a background thread using the global(qos:) method on a dispatch queue.*/
+
+//Capturing values from the enclosing scope
+func makeCounter() -> () -> Int{
+    var count = 0
+    return {
+        count += 1
+        return count
+    }
+}
+let counter = makeCounter()
+print(counter())
+print(counter())
+print(counter())
+print(counter())
+/*In this example, the makeCounter function returns a closure that captures a local variable count from the enclosing scope. Each time the closure is called, the count variable is incremented and its new value is returned. The counter variable is assigned the returned closure and can be called multiple times to generate a sequence of incremented values.*/
