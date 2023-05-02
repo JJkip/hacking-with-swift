@@ -217,3 +217,14 @@ delay(1) {
 }
 print("End")
 /*In the above example, the delay function takes a number of seconds and a closure as arguments. The closure is executed after the specified number of seconds have passed, using the asyncAfter method on a dispatch queue. The @escaping keyword indicates that the closure can escape the function's scope and be executed later.*/
+
+/*Using a closure to perform a task on a background thread*/
+func performTaskInBackground(_ task: @escaping () -> Void) {
+    DispatchQueue.global(qos: .background).async {
+        task()
+    }
+}
+
+performTaskInBackground {
+    print("This task is running on a background thread")
+}
