@@ -165,7 +165,6 @@ func captainFirtSorted(name1: String, name2: String) -> Bool {
 let captainFirstTeam = team.sorted(by: captainFirtSorted)
 print(captainFirstTeam)
 
-print(captainFirstTeamB)
 /*Calling sorted() using a closure*/
 let captainFirstTeamX = team.sorted(by: {(name1: String, name2: String) -> Bool in
     if name1 == "Soi" {
@@ -185,7 +184,7 @@ let captainFirstTeamB = team.sorted {
     }
     return $0 < $1
 }
-
+print(captainFirstTeamB)
 
 //MORE CLOSURE EXAMPLES
 /*A closure that takes two integers and returns their sum:*/
@@ -199,6 +198,9 @@ print(result2)
 let numbers = [1,3,7,2,8,4,12,6]
 let doubleNumbers = numbers.map {$0 * 2}
 print(doubleNumbers)
+/*Converting an array to uppercase*/
+let upperCaseTeam = team.map { $0.uppercased()}
+print(upperCaseTeam)
 //Filtering an array of numbers:
 let evenNumbers = numbers.filter { $0 % 2 == 0 }
 print(evenNumbers)
