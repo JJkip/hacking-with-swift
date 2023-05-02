@@ -142,12 +142,12 @@ let user = data(1988)
 print(user)
 
 //Sorting an array with closure
-let team = ["Gloria", "Soi", "Peter", "Tiff"]
+let team = ["Gloria", "Soi", "Peter", "Tiff", "Sandra"]
 let sortedTeam = team.sorted()
 print(sortedTeam)
-/*Sorting an array of strings in descending order*/
-let sortedTeamB = team.sorted { $1 < $0 }
-print(sortedTeamB)
+/*Sorting an array of strings in descending order using shorthand syntax*/
+let reverseTeam = team.sorted { $1 < $0 }
+print(reverseTeam)
 /*In the above example the $0 and $1 shorthand syntax represent the first and second elements being compared, respectively.*/
 /*Using a closure to define a custom sorting order*/
 let sortedTeamC = team.sorted { $0.count < $1.count }
@@ -164,6 +164,16 @@ func captainFirtSorted(name1: String, name2: String) -> Bool {
 }
 let captainFirstTeam = team.sorted(by: captainFirtSorted)
 print(captainFirstTeam)
+/* parameter names for the above example, using shorthand syntax*/
+let captainFirstTeamB = team.sorted {
+    if $0 == "Soi" {
+        return true
+    } else if $1 == "Soi" {
+        return false
+    }
+    return $0 < $1
+}
+print(captainFirstTeamB)
 /*Calling sorted() using a closure*/
 let captainFirstTeamX = team.sorted(by: {(name1: String, name2: String) -> Bool in
     if name1 == "Soi" {
