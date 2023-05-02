@@ -164,15 +164,7 @@ func captainFirtSorted(name1: String, name2: String) -> Bool {
 }
 let captainFirstTeam = team.sorted(by: captainFirtSorted)
 print(captainFirstTeam)
-/* parameter names for the above example, using shorthand syntax*/
-let captainFirstTeamB = team.sorted {
-    if $0 == "Soi" {
-        return true
-    } else if $1 == "Soi" {
-        return false
-    }
-    return $0 < $1
-}
+
 print(captainFirstTeamB)
 /*Calling sorted() using a closure*/
 let captainFirstTeamX = team.sorted(by: {(name1: String, name2: String) -> Bool in
@@ -184,7 +176,15 @@ let captainFirstTeamX = team.sorted(by: {(name1: String, name2: String) -> Bool 
     return name1 < name2
 })
 print(captainFirstTeamX)
-
+/* parameter names for the above example, using shorthand syntax*/
+let captainFirstTeamB = team.sorted {
+    if $0 == "Soi" {
+        return true
+    } else if $1 == "Soi" {
+        return false
+    }
+    return $0 < $1
+}
 
 //MORE CLOSURE EXAMPLES
 /*A closure that takes two integers and returns their sum:*/
