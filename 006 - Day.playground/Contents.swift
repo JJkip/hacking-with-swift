@@ -166,3 +166,34 @@ let captainFirstTeamX = team.sorted(by: {(name1: String, name2: String) -> Bool 
     return name1 < name2
 })
 print(captainFirstTeamX)
+
+
+//MORE CLOSURE EXAMPLES
+/*A closure that takes two integers and returns their sum:*/
+let sum = { (a: Int, b: Int) -> Int in
+    return a + b
+}
+let result4 = sum(4,8)
+print(result2)
+
+/*Using the "trailing closure" syntax:*/
+let numbers = [1,3,7]
+let doubleNumbers = numbers.map {$0 * 2}
+print(doubleNumbers)
+
+/*Closures and how they can be used to create closures with captured values from its surrounding context. This means that it can access variables and constants from the scope in which it is defined. For example:*/
+func makeAdder(forIncreament amount: Int) -> (() -> Int) {
+    var runningTotal = 0
+    return {
+        runningTotal += amount
+        return runningTotal
+    }
+}
+let add5 = makeAdder(forIncreament: 5)
+let add10 = makeAdder(forIncreament: 10)
+print(add5())
+print(add5())
+print(add10())
+print(add10())
+print(add5())
+/*In the above example, makeAdder(forIncrement:) is a function that returns a closure. The closure captures the runningTotal variable from the function's scope and increments it by the specified amount. The makeAdder(forIncrement:) function is called twice to create two separate closures: add5 and add10. Each closure has its own runningTotal variable that is separate from the other closure's variable.*/
