@@ -145,6 +145,11 @@ print(user)
 let team = ["Gloria", "Soi", "Peter", "Tiff"]
 let sortedTeam = team.sorted()
 print(sortedTeam)
+/*Sorting an array of strings in descending order*/
+let sortedTeamB = team.sorted { $1 < $0 }
+print(sortedTeamB)
+/*In the above example the $0 and $1 shorthand syntax represent the first and second elements being compared, respectively.*/
+
 /*Customize the sorting closure*/
 func captainFirtSorted(name1: String, name2: String) -> Bool {
     if name1 == "Soi" {
@@ -177,9 +182,13 @@ let result4 = sum(4,8)
 print(result2)
 
 /*Using the "trailing closure" syntax:*/
-let numbers = [1,3,7]
+let numbers = [1,3,7,2,8,4,12,6]
 let doubleNumbers = numbers.map {$0 * 2}
 print(doubleNumbers)
+//Filtering an array of numbers:
+let evenNumbers = numbers.filter { $0 % 2 == 0 }
+print(evenNumbers)
+print(evenNumbers.sorted())
 
 /*Closures and how they can be used to create closures with captured values from its surrounding context. This means that it can access variables and constants from the scope in which it is defined. For example:*/
 func makeAdder(forIncreament amount: Int) -> (() -> Int) {
@@ -197,3 +206,4 @@ print(add10())
 print(add10())
 print(add5())
 /*In the above example, makeAdder(forIncrement:) is a function that returns a closure. The closure captures the runningTotal variable from the function's scope and increments it by the specified amount. The makeAdder(forIncrement:) function is called twice to create two separate closures: add5 and add10. Each closure has its own runningTotal variable that is separate from the other closure's variable.*/
+
