@@ -207,3 +207,13 @@ print(add10())
 print(add5())
 /*In the above example, makeAdder(forIncrement:) is a function that returns a closure. The closure captures the runningTotal variable from the function's scope and increments it by the specified amount. The makeAdder(forIncrement:) function is called twice to create two separate closures: add5 and add10. Each closure has its own runningTotal variable that is separate from the other closure's variable.*/
 
+/*Delaying execution of a piece of code:*/
+func delay(_ seconds: Double, closure: @escaping () -> Void){
+    DispatchQueue.main.asyncAfter(deadline: .now() + seconds, execute: closure)
+}
+print("Start")
+delay(1) {
+    print("Delayed execution")
+}
+print("End")
+/*In the above example, the delay function takes a number of seconds and a closure as arguments. The closure is executed after the specified number of seconds have passed, using the asyncAfter method on a dispatch queue. The @escaping keyword indicates that the closure can escape the function's scope and be executed later.*/
