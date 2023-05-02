@@ -193,6 +193,16 @@ print(evenNumbers.sorted())
 let sumNumbers = numbers.reduce(0) { $0 + $1}
 print(sumNumbers)
 /*In the above example, the reduce method on the numbers array takes an initial value and a closure as arguments. The closure combines each element of the array with the accumulated value to produce a new value. The $0 and $1 shorthand syntax represent the accumulated value and the current element being reduced, respectively. The final result is the sum of all the elements in the array.*/
+//Filtering an array of dictionaries:
+let people = [
+    ["name":"Alice", "age": 31],
+    ["name":"Bob", "age":15],
+    ["name":"Charlie", "age":36]
+]
+let adults = people.filter { $0["age"] as? Int ?? 0 >= 30 }
+print(adults)
+/*In the above example, the filter method on the people array of dictionaries takes a closure as an argument that returns a Boolean value indicating whether a dictionary should be included in the filtered array. The $0 shorthand syntax represents each dictionary being filtered, and the closure checks if the "age" key is an Int greater than or equal to 30.*/
+
 
 /*Closures and how they can be used to create closures with captured values from its surrounding context. This means that it can access variables and constants from the scope in which it is defined. For example:*/
 func makeAdder(forIncreament amount: Int) -> (() -> Int) {
