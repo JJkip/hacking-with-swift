@@ -149,7 +149,10 @@ print(sortedTeam)
 let sortedTeamB = team.sorted { $1 < $0 }
 print(sortedTeamB)
 /*In the above example the $0 and $1 shorthand syntax represent the first and second elements being compared, respectively.*/
-
+/*Using a closure to define a custom sorting order*/
+let sortedTeamC = team.sorted { $0.count < $1.count }
+print(sortedTeamC)
+/*In the above example, the sorted method on the people array takes a closure as an argument that defines a custom sorting order. The closure compares the character count of two elements and returns a Boolean value indicating whether they should be sorted in ascending order.*/
 /*Customize the sorting closure*/
 func captainFirtSorted(name1: String, name2: String) -> Bool {
     if name1 == "Soi" {
@@ -196,8 +199,8 @@ print(sumNumbers)
 //Filtering an array of dictionaries:
 let people = [
     ["name":"Alice", "age": 31],
-    ["name":"Bob", "age":15],
-    ["name":"Charlie", "age":36]
+    ["name":"Bob", "age": 15],
+    ["name":"Charlie", "age": 36]
 ]
 let adults = people.filter { $0["age"] as? Int ?? 0 >= 30 }
 print(adults)
