@@ -278,3 +278,42 @@ print(counter())
 print(counter())
 /*In this example, the makeCounter function returns a closure that captures a local variable count from the enclosing scope. Each time the closure is called, the count variable is incremented and its new value is returned. The counter variable is assigned the returned closure and can be called multiple times to generate a sequence of incremented values.*/
 
+
+//How to accept functions as parameters
+func makeArray(size: Int, using generator: () -> Int) -> [Int]{
+    var numbers = [Int]()
+    for _ in 0..<size {
+        let newNumber = generator()
+        numbers.append(newNumber)
+    }
+    return numbers
+}
+let rolls = makeArray(size: 50) {
+    Int.random(in: 1...20)
+}
+print("Hi, User")
+print(rolls)
+/*Adding dedicated dedicated functions*/
+func generateNumber() -> Int {
+    Int.random(in: 1...20)
+}
+let newRolls = makeArray(size: 20, using: generateNumber)
+print(newRolls)
+
+/*Function that accepts multiple function parameters */
+func doImportantWork(first: () -> Void, second: () -> Void, third: () -> Void){
+    print("About to start first work")
+    first()
+    print("About to start second work")
+    second()
+    print("About to start third work")
+    third()
+    print("Done!")
+}
+doImportantWork {
+    print("This is the first work")
+} second: {
+    print("This is the second work")
+} third: {
+    print("This is the third work")
+}
