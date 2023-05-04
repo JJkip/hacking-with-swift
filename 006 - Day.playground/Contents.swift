@@ -340,7 +340,16 @@ func topStudentFilterF(student: Student) -> Bool {
     return student.testScore > 70
 }
 let topStudents = students.filter(topStudentFilterF)
-
+/*Using shorthand*/
+let topStudentsB = students.filter { $0.testScore > 70}
+let studentRanking = topStudentsB.sorted { $0.testScore > $1.testScore }
 for topStudent in topStudents {
     print(topStudent.name)
+}
+for topStudent in topStudentsB {
+    print(topStudent.name)
+}
+print("Student Ranking 👇")
+for studentRank in studentRanking {
+    print(studentRank.name)
 }
