@@ -317,3 +317,30 @@ doImportantWork {
 } third: {
     print("This is the third work")
 }
+
+//Closure with structs example
+struct Student {
+    let name: String
+    var testScore: Int
+}
+let students = [
+    Student (name: "Kipkemoi", testScore: 88),
+    Student (name: "Lewis", testScore: 73),
+    Student (name: "Obi-Wan", testScore: 95),
+    Student (name: "Laila", testScore: 78),
+    Student (name: "John", testScore: 65),
+    Student (name: "Omondi", testScore: 86),
+    Student (name: "Ashoka", testScore: 68),
+]
+var topStudentFilter: (Student) -> Bool = { student in
+    return student.testScore > 80
+}
+
+func topStudentFilterF(student: Student) -> Bool {
+    return student.testScore > 70
+}
+let topStudents = students.filter(topStudentFilterF)
+
+for topStudent in topStudents {
+    print(topStudent.name)
+}
