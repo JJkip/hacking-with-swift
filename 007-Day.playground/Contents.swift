@@ -95,3 +95,27 @@ print(genge.artist)
 sautisol.printSummary()
 genge.printSummary()
 
+//Changing values of a struct function
+struct Employee {
+    let name: String
+    var vacationRemaining: Int
+    
+    mutating func takeVacation(days: Int){
+        if vacationRemaining > days {
+            vacationRemaining -= days
+            print("I'm going on vacation!")
+            print("Days remaining: \(vacationRemaining)")
+        } else {
+            print("Ooops! There aren't enough days remaining.")
+        }
+    }
+}
+
+var archer = Employee(name: "John Omondi", vacationRemaining: 14)
+archer.takeVacation(days: 5)
+print(archer.vacationRemaining)
+
+var archer1 = Employee(name: "John Omondi", vacationRemaining: 14)
+var archer2 = Employee.init(name: "John Omondi", vacationRemaining: 14)
+/*In the above one might seem a bit odd at first, because we’re treating our struct like a function and passing in parameters. This is a little bit of what’s called syntactic sugar – Swift silently creates a special function inside the struct called init(), using all the properties of the struct as its parameters. It then automatically treats these two pieces of code as being the same:*/
+
