@@ -76,3 +76,22 @@ toys.firstIndex(of: "Buzz")
 print(toys.sorted())
 toys.remove(at: 0)
 
+// STRUCTS UPDATE
+struct Album {
+    let title: String
+    let artist: String
+    let year: Int
+    
+    func printSummary(){
+        print("\(title) (\(year)) by \(artist)")
+    }
+}
+let sautisol = Album(title: "Nobody", artist: "Bien", year: 2023)
+let genge = Album(title: "Wainame", artist: "KRG", year: 2018)
+
+print(sautisol.title)
+print(genge.artist)
+
+sautisol.printSummary()
+genge.printSummary()
+
