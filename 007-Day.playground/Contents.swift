@@ -119,3 +119,36 @@ var archer1 = Employee(name: "John Omondi", vacationRemaining: 14)
 var archer2 = Employee.init(name: "John Omondi", vacationRemaining: 14)
 /*In the above one might seem a bit odd at first, because we’re treating our struct like a function and passing in parameters. This is a little bit of what’s called syntactic sugar – Swift silently creates a special function inside the struct called init(), using all the properties of the struct as its parameters. It then automatically treats these two pieces of code as being the same:*/
 
+
+struct EmployeeX {
+    let name: String
+    var vacationRemainingX: Int
+}
+var archer3 = EmployeeX(name: "Wakio Wamwire", vacationRemainingX: 14)
+archer3.vacationRemainingX -= 5
+print("Days remaining: \(archer3.vacationRemainingX)")
+archer3.vacationRemainingX -= 3
+print("Remaining days: \(archer3.vacationRemainingX)")
+/*The code above works as a trivial struct, but we’re losing valuable information – we’re assigning this employee 14 days of vacation then subtracting them as days are taken, but in doing so we’ve lost how many days they were originally granted. Bwlow is how to fix the code*/
+
+struct EmployeeY {
+    let name: String
+    var vacationAllocated = 14
+    var vacationTaken = 0
+//    var vacationRemaining: Int {
+//        vacationAllocated - vacationTaken
+//    }
+    var vacationRemaining: Int {
+        get {
+            vacationAllocated - vacationTaken
+        }
+        set {
+            vacationAllocated = vacationTaken + newValue
+        }
+    }
+}
+var archer4 = EmployeeY(name: "John Doe", vacationAllocated: 14)
+archer4.vacationTaken += 4
+print("NO of days remaining: \(archer4.vacationRemaining)")
+archer4.vacationRemaining = 4
+print("Days allowed: \(archer4.vacationAllocated)")
