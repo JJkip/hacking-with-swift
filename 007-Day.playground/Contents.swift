@@ -231,3 +231,33 @@ if success {
 }
 
 account.funds -= 1000
+
+//Static properties and methods
+struct School {
+    static var studentCount = 0
+    static func add(student: String){
+        print("\(student) joined the school")
+        studentCount += 1
+    }
+}
+/* In the above example notice the keyword static in there, which means both the studentCount property and add() method belong to the School struct itself, rather than to individual instances of the struct.
+ 
+ To use that code, we’d write the following:*/
+School.add(student: "Mary Wambui")
+print(School.studentCount)
+
+struct AppData {
+    static let version = "1.3 beta 2"
+    static let saveFilename = "settings.json"
+    static let homeURL = "https://www.wasiliana.com"
+}
+/*In the above example using this approach, everywhere I need to check or display something like my app’s version number – an about screen, debug output, logging information, support emails, etc – I can read AppData.version.
+ 
+*/
+
+struct EmployeeA {
+    let username: String
+    let password: String
+
+    static let example = EmployeeA(username: "qwerty", password: "hairforceone")
+}
