@@ -190,3 +190,14 @@ for i in 1...3 {
 print("Loop is finished")
 users.removeAll()
 print("Array is clear!")
+
+//How to work with variables inside classes
+class UserZ {
+    var name = "Kiptoo"
+}
+
+var user = UserZ()
+user.name = "Cheptoo"
+print(user.name)
+user = UserZ()
+print(user.name)
