@@ -201,3 +201,11 @@ user.name = "Cheptoo"
 print(user.name)
 user = UserZ()
 print(user.name)
+/* The final variation is having a variable instance and constant properties, which would mean we can create a new User if we want, but once it’s done we can’t change its properties.
+ 
+ So, we end up with four options:
+
+ Constant instance, constant property – a signpost that always points to the same user, who always has the same name.
+ Constant instance, variable property – a signpost that always points to the same user, but their name can change.
+ Variable instance, constant property – a signpost that can point to different users, but their names never change.
+ Variable instance, variable property – a signpost that can point to different users, and those users can also change their names.*/
