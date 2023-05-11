@@ -137,6 +137,19 @@ jano.work()
 omondi.printSummary()
 jano.printSummary()
 
+//How to add initializers for classes
+class Vehicle {
+    let isElectic: Bool
+    init(isElectric: Bool) {
+        self.isElectic = isElectric
+    }
+}
 
-
-
+class Car: Vehicle {
+    let isConvertable: Bool
+    init(isElectric: Bool, isConvertable: Bool) {
+        self.isConvertable = isConvertable
+        super.init(isElectric: isElectric)
+    }
+}
+let teslaX = Car(isElectric: true, isConvertable: false)
