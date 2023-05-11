@@ -153,3 +153,19 @@ class Car: Vehicle {
     }
 }
 let teslaX = Car(isElectric: true, isConvertable: false)
+
+//How to copy classes
+class User {
+    var username = "Anonymous"
+    /*If you want to create a unique copy of a class instance – sometimes called a deep copy – you need to handle creating a new instance and copy across all your data safely.*/
+    func copy() -> User {
+        let user = User()
+        user.username = username
+        return user
+    }
+}
+var user1 = User()
+var user2 = user1.copy()
+user2.username = "Hillary"
+print(user1.username)
+print(user2.username)
