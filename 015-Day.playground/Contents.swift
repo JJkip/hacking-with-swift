@@ -252,7 +252,8 @@ protocol Vehicle {
     func estimateTime(for distance: Int) -> Int
     func travel(distance: Int)
 }
-struct Car: Vehicle {
+protocol canBeElectric {}
+struct Car: Vehicle, canBeElectric {
     let name = "Car"
     var currentPassangers = 2
     func estimateTime(for distance: Int) -> Int {
