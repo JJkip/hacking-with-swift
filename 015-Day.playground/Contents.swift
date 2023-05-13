@@ -400,3 +400,7 @@ print(user1 == user2)
 print(user1 != user2)
 print(user1 < user2)
 print(user1 >= user2)
+/*Protocols are like contracts for code: we specify the functions and methods that we required, and conforming types must implement them.
+ Opaque return types let us hide some information in our code. That might mean we want to retain flexibility to change in the future, but also means we don’t need to write out gigantic return types.
+ Extensions let us add functionality to our own custom types, or to Swift’s built-in types. This might mean adding a method, but we can also add computed properties.
+ Protocol extensions let us add functionality to many types all at once – we can add properties and methods to a protocol, and all conforming types get access to them.*/
