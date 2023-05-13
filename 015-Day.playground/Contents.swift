@@ -298,3 +298,12 @@ let bike = Bicycle()
 commute(distance: 50, using: bike)
 
 getTravelEstimate(using: [car, bike], distance: 150)
+
+//How to use opaque return types
+func getRandomNumber() -> some Equatable {
+    Double.random(in: 1...6)
+}
+func getRandomBool() -> some Equatable {
+    Bool.random()
+}
+print(getRandomNumber() == getRandomNumber())
