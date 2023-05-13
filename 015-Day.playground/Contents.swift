@@ -375,3 +375,28 @@ struct EmployeeB: Person {
 }
 let terry = EmployeeB(name: "Terry Hans")
 terry.sayHello()
+
+//How to get the most from protocol extensions
+extension Numeric {
+    func squared() -> Self {
+        self * self
+    }
+}
+let wholeNumber = 5
+print(wholeNumber.squared())
+
+//struct User: Equatable, Comparable {
+struct User: Comparable {
+    let name: String
+    
+    static func <(lhs: User, rhs: User) -> Bool {
+        lhs.name < rhs.name
+    }
+}
+
+let user1 = User(name: "Zink")
+let user2 = User(name: "Kiptoo")
+print(user1 == user2)
+print(user1 != user2)
+print(user1 < user2)
+print(user1 >= user2)
