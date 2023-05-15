@@ -85,3 +85,22 @@ print(author)
 let input = ""
 let numberX = Int(input) ?? 0
 print(numberX)
+
+
+//How to handle multiple optionals using optional chaining
+/*Optional chaining is a simplified syntax for reading optionals inside optionals.*/
+let names = ["John", "Ken", "Ann"]
+let chosen = names.randomElement()?.uppercased() ?? "No one"
+
+/*we want to place books in alphabetical order based on their author names. If we break this right down, then:
+-> We have an optional instance of a Book struct – we might have a book to sort, or we might not.
+-> The book might have an author, or might be anonymous.
+-> If it does have an author string present, it might be an empty string or have text, so we can’t always rely on the first letter being there.
+-> If the first letter is there, make sure it’s uppercase so that authors with lowercase names such as bell hooks are sorted correctly.*/
+struct BookX {
+    let titleX: String
+    let authorX: String?
+}
+var bookX: BookX? = nil
+let authorX = bookX?.authorX?.first?.uppercased() ?? "A"
+print(authorX)
