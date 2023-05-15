@@ -104,3 +104,45 @@ struct BookX {
 var bookX: BookX? = nil
 let authorX = bookX?.authorX?.first?.uppercased() ?? "A"
 print(authorX)
+
+
+//How to handle function failure with optionals
+/*When we call a function that might throw errors, we either call it using try and handle errors appropriately, or if we’re certain the function will not fail we use try! and accept that if we were wrong our code will crash. (Spoiler: you should use try! very rarely.)
+ 
+ However, there is an alternative: if all we care about is whether the function succeeded or failed, we can use an optional try to have the function return an optional value. If the function ran without throwing any errors then the optional will contain the return value, but if any error was thrown the function will return nil. This means we don’t get to know exactly what error was thrown, but often that’s fine – we might just care if the function worked or not.
+
+ Here’s how it looks:*/
+enum UserError: Error {
+    case badID, networkFailed
+}
+func getUser(id: Int) throws -> String {
+    throw UserError.networkFailed
+}
+if let user = try? getUser(id: 23) {
+    print("User: \(user)")
+}
+/*The getUser() function will always throw a networkFailed error, which is fine for our testing purposes, but we don’t actually care what error was thrown – all we care about is whether the call sent back a user or not.
+ 
+ This is where try? helps: it makes getUser() return an optional string, which will be nil if any errors are thrown. If you want to know exactly what error happened then this approach won’t be useful, but a lot of the time we just don’t care.
+
+ If you want, you can combine try? with nil coalescing, which means “attempt to get the return value from this function, but if it fails use this default value instead.”
+
+ Be careful, though: you need to add some parentheses before nil coalescing so that Swift understands exactly what you mean. For example, you’d write this:*/
+let user = (try? getUser(id: 23)) ?? "Anonymous"
+print(user)
+
+/*You’ll find try? is mainly used in three places:
+ 
+ In combination with guard let to exit the current function if the try? call returns nil.
+ In combination with nil coalescing to attempt something or provide a default value on failure.
+ When calling any throwing function without a return value, when you genuinely don’t care if it succeeded or not – maybe you’re writing to a log file or sending analytics to a server, for example.*/
+
+//SUMMARY
+/*Optionals let us represent the absence of data, which means we’re able to say “this integer has no value” – that’s different from a fixed number such as 0.
+ As a result, everything that isn’t optional definitely has a value inside, even if that’s just an empty string.
+ Unwrapping an optional is the process of looking inside a box to see what it contains: if there’s a value inside it’s sent back for use, otherwise there will be nil inside.
+ We can use if let to run some code if the optional has a value, or guard let to run some code if the optional doesn’t have a value – but with guard we must always exit the function afterwards.
+ The nil coalescing operator, ??, unwraps and returns an optional’s value, or uses a default value instead.
+ Optional chaining lets us read an optional inside another optional with a convenient syntax.
+ If a function might throw errors, you can convert it into an optional using try? – you’ll either get back the function’s return value, or nil if an error is thrown.
+ Optionals are second only to closures when it comes to language features folks struggle to learn, but I promise after a few months you’ll wonder how you could live without them!*/
